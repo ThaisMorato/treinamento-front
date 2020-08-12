@@ -3,22 +3,30 @@
 <div *ngIf="mode=='list'">
   <ul class="animate__animated animate__flipInX">
     <p *ngIf="todos.length==0"><small>Você não tem nenhuma tarefa.</small></p>
-    <li *ngFor="let todo of todos">{{todo.title}} | <button (click)="remove(todo)"> REMOVER</button><button *ngIf="!todo.done" (click)="markAsDone(todo)">CONCLUIR</button><button *ngIf="todo.done" (click)="markAsUndone(todo)">REFAZER</button></li>
+    <li *ngFor="let todo of todos">
+      {{todo.title}}
+      <button class="modeButton" (click)="remove(todo)"><i class="far fa-trash-alt"></i></button>
+      <button class="modeButton" *ngIf="!todo.done" (click)="markAsDone(todo)"><i class="far fa-check-circle"></i></button>
+      <button class="modeButton" *ngIf="todo.done" (click)="markAsUndone(todo)"><i class="fas fa-check-circle"></i></button>
+    </li>
   </ul>
 
-  <button class="modeButton animate__animated animate__fadeInUp" (click)="changeMode('add')"><i class="fa fa-plus"></i>ADICIONAR TAREFA</button>
+  <button class="actionButton animate__animated animate__fadeInUp" (click)="changeMode('add')"><i class="simbol fa fa-plus"></i>ADICIONAR TAREFA</button>
 </div>
 
 <div id="formulario" *ngIf="mode=='add'">
+  
   <form [formGroup]="form" class="animate__animated animate__flipInX">
-    <fieldset>
-      <label>Tarefa</label>
-      <input type="text" formControlName="title" placeholder="Insira a tarefa" maxlength="60">
-      <small *ngIf="form.controls.title.invalid && !form.controls.title.pristine">Este campo deve conter entre 3 e 60 caracteres</small>
-      <button class="botao" [disabled]="form.invalid" (click)="add()">SALVAR</button>
-    </fieldset>
+    <h2>Nova tarefa</h2>
+    <input type="text" formControlName="title" placeholder="Insira a tarefa" maxlength="60">
+    <div *ngIf="form.controls.title.invalid && !form.controls.title.pristine">
+      <small class="danger">Este campo deve conter entre</small>
+      <br>
+      <small class="danger">3 e 60 caracteres</small>
+    </div>
+    <button class="actionButton" [disabled]="form.invalid" (click)="add()">SALVAR</button>
   </form>
 
-  <button class="modeButton animate__animated animate__fadeInUp" (click)="changeMode('list')"><i class="fa fa-times"></i>CANCELAR</button>
+  <button class="actionButton animate__animated animate__fadeInUp" (click)="changeMode('list')"><i class="simbol fa fa-times"></i>CANCELAR</button>
 
 </div>
