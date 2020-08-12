@@ -1,6 +1,6 @@
-<h1>{{ title }}</h1>
+<h1 class="title animate__animated animate__jackInTheBox">{{ title }}</h1>
 
-<ul>
+<ul class="animate__animated animate__bounce" *ngIf="mode=='list'">
   <p *ngIf="todos.length==0"><small>Não tem nenhuma tarefa hoje!</small></p>
   <li *ngFor="let fagner of todos">{{ fagner.id }} - {{ fagner.todo }} -> <!-- muito doiso isso-->
     <button *ngIf="!fagner.done" (click)="markAsDone(fagner)">Concluir</button> 
@@ -15,6 +15,6 @@
     <input type="text" placeholder="Titulo da tarefa" maxlength="60" formControlName="title">
     <small *ngIf="form.controls.title.invalid && !form.controls.title.pristine"> <!--Se ele já tentou preencher e deu erro-->
       Este campo deve conter entre 3 e 60 caracteres</small>
-    <button [disabled]="form.invalid" (click)="add()">Salvar</button> 
+    <button class="button" [disabled]="form.invalid" (click)="add()">Salvar</button> 
   </fieldset>
 </form>
