@@ -1,20 +1,37 @@
-<h1 class="title animate__animated animate__jackInTheBox">{{ title }}</h1>
+<h1 class="title animate__animated animate__backInDown">{{ title }}</h1>
 
-<ul class="animate__animated animate__bounce" *ngIf="mode=='list'">
-  <p *ngIf="todos.length==0"><small>Não tem nenhuma tarefa hoje!</small></p>
-  <li *ngFor="let fagner of todos">{{ fagner.id }} - {{ fagner.todo }} -> <!-- muito doiso isso-->
-    <button *ngIf="!fagner.done" (click)="markAsDone(fagner)">Concluir</button> 
-    <button *ngIf="fagner.done" (click)="markAsUndone(fagner)">Refazer</button> 
-    || <button (click)="remove(fagner)">Remover</button>
+<ul class="animate__animated animate__rubberBand" *ngIf="mode=='list'">
+
+  <p class="text-center" *ngIf="todos.length==0"><small>Não tem nenhuma tarefa hoje!</small></p>
+  
+  <li *ngFor="let fagner of todos">{{ fagner.todo }} <!-- muito doiso isso-->
+    <button (click)="remove(fagner)"><i class="far fa-trash-alt"></i></button>
+    <button *ngIf="!fagner.done" (click)="markAsDone(fagner)"><i class="far fa-check-circle"></i></button> 
+    <button *ngIf="fagner.done" (click)="markAsUndone(fagner)"><i class="fas fa-check-circle"></i></button> 
+    
   </li>
 </ul>
 
+<div id="modal" *ngIf="mode=='add'" class="animate__animated animate__flipInX">
+<h1 class="text-center">Nova Tarefa</h1>
 <form [formGroup]="form">
-  <fieldset> <!-- Pesquisar fieldset-->
-    <label>Tarefa </label>
     <input type="text" placeholder="Titulo da tarefa" maxlength="60" formControlName="title">
-    <small *ngIf="form.controls.title.invalid && !form.controls.title.pristine"> <!--Se ele já tentou preencher e deu erro-->
-      Este campo deve conter entre 3 e 60 caracteres</small>
-    <button class="button" [disabled]="form.invalid" (click)="add()">Salvar</button> 
-  </fieldset>
+    <small class="danger" *ngIf="form.controls.title.invalid && !form.controls.title.pristine"> <!--Se ele já tentou preencher e deu erro-->
+      Este campo deve conter entre 3 e 60 caracteres<br>
+    </small>
+    <p class="text-center">
+      <button class="button" [disabled]="form.invalid" (click)="add()">
+        <i class="far fa-save"></i> Salvar</button> 
+    </p>
 </form>
+</div>
+
+<button class="add-button animate__animated animate__fadeInUp button" (click)="changeMode('add')" *ngIf="mode=='list'">
+  <i class="fas fa-plus-circle"></i>
+  NOVA TAREFA
+</button>
+
+<button class="add-button animate__animated animate__fadeInUp button" (click)="changeMode('list')" *ngIf="mode=='add'">
+  <i class="fas fa-times"></i>
+  CANCELAR
+</button>

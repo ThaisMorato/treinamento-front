@@ -59,6 +59,7 @@ export class AppComponent {
   save() {
     const data = JSON.stringify(this.todos)
     localStorage.setItem('todos', data)
+    this.mode = 'list'
   }
 
   load() {
@@ -71,8 +72,16 @@ export class AppComponent {
     }
   }
 
+  changeMode(mode:string) {
+    this.mode = mode
+  }
+
+
+
 
 }
+
+
 
 //No typeScript com this. tenho acesso a todos os métodos e atributos dentro da classe
 //O tipo any aceita qualquer tipo de variável (number, string, etc)
