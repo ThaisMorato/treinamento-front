@@ -11,6 +11,7 @@ export class AppComponent {
   public title: String = 'Minhas Tarefas';
   public todos: Todo[] = [];
   public form: FormGroup;
+  public mode = 'list';
 
   constructor(private fb: FormBuilder) {
     this.form = this.fb.group({
@@ -64,5 +65,9 @@ export class AppComponent {
     if(myData !== null){
       this.todos = myData;
     }
+  }
+
+  changeMode(mode: string){
+    this.mode = mode;
   }
 }
