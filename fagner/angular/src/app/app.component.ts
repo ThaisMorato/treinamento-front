@@ -1,5 +1,5 @@
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Component } from '@angular/core';
+import { Component } from '@angular/core'; 
 import { Todo } from 'src/models/todo.model';
 
 @Component({
@@ -20,7 +20,7 @@ export class AppComponent {
         Validators.required,
       ])]
     })
-    this.load() //Dentro do construtor o método vai ser iniciado toda vez que a plicação inicia
+    this.load()   //Dentro do construtor o método vai ser iniciado toda vez que a plicação inicia
   }
 
   add() {
@@ -28,8 +28,8 @@ export class AppComponent {
     const title = this.form.controls['title'].value
     const id = this.todos.length + 1
     this.todos.push(new Todo(id, title, false))
+    this.save()
     this.clear()
-    this.save
   }
 
   clear() {
@@ -56,15 +56,19 @@ export class AppComponent {
   }
 
   save() {
-    const data = JSON.stringify(this.todos);
+    const data = JSON.stringify(this.todos)
     localStorage.setItem('todos', data)
   }
 
   load() {
     const data = localStorage.getItem('todos')
-    const items = JSON.parse(data)
+    if (data) {
+      this.todos = JSON.parse(data)
+    }
+    else {
+      this.todos = []
+    }
   }
-
 
 
 }

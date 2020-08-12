@@ -1,1 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family:  Arial, sans-serif;
+    font-weight: 300;
+    text-align: center;
+    background-color: #3023ae;
+    background: -webkit-linear-gradient(60deg, #3023ae 0%, #c86dd7 100%);
+    background: -moz-linear-gradient(60deg, #3023ae 0%, #c86dd7 100%);
+    background: linear-gradient(60deg, #3023ae 0%, #c86dd7 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(artColorstr='#3023ae', endColorstr='#c86dd7', GradientType=1);
+}
+
+ul {
+    text-align: left;
+    padding: 10px;
+    list-style: none;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 3px 4px 14px 0px rgba(0,0,0,.39);
+}
