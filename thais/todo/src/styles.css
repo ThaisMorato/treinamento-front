@@ -17,10 +17,17 @@ body{
 }
 
 h1{
+    font-family: 'Amatic SC', cursive;
+    font-weight: 700;
+    margin: 10px 10px 20px 10px;
     text-align: center;
     color: white;
-    font-size: 50px;
+    font-size: 70px;
     text-shadow: 3px 4px 3px rgb(0, 0, 0, 0.8);
+}
+
+p{
+    text-align: center;
 }
 
 ul{
@@ -39,7 +46,7 @@ li{
     border-bottom: 1px solid rgb(0, 0, 0, 0.2);
 }
 
-li>button{
+.modeButton{
     cursor: pointer;
     border: none;
     background-color: rgb(255, 255, 255);
@@ -47,27 +54,15 @@ li>button{
     float: right;
     opacity: 0.4;
     transition: opacity 1s;
+    font-size: 16px;
 }
 
-li>button:hover{
+.modeButton:hover{
     opacity: 1;
     transition: opacity 1s;
 }
 
-.botao{
-    cursor: pointer;
-    border: none;
-    float: right;
-    background-color: black;
-    color: white;
-    font-size: 14px;
-    text-align: center;
-    margin: 10px;
-    padding: 10px 15px 10px 15px;
-    border-radius: 8px;
-}
-
-.modeButton{
+.actionButton{
     cursor: pointer;
     border: none;
     background-color: black;
@@ -75,28 +70,26 @@ li>button:hover{
     font-size: 14px;
     text-align: center;
     display: block;
-    margin: 30px auto 30px auto;
+    margin: 30px auto 20px auto;
     padding: 10px 15px 10px 15px;
     border-radius: 8px;
 }
 
-.fa{
+.actionButton:disabled{
+    opacity: 0.4;
+}
+
+.simbol{
     margin-right: 8px;
 }
 
 #formulario>form{
-    text-align: left;
+    text-align: center;
     margin: 10px;
-    padding: 10px;
+    padding: 30px;
     background-color: white;
     border-radius: 10px;
     box-shadow: 3px 4px 14px 0px rgb(0, 0, 0, 0.5);
-}
-
-fieldset{
-    border: none;
-    margin: 10px;
-    padding: 15px;
 }
 
 input{
@@ -110,4 +103,13 @@ input{
     margin: 10px auto 10px auto;
     line-height: 30px;
     text-indent: 10px;
+}
+
+.danger{
+    background-color: rgb(229, 152, 152);
+    color: white;
+    padding: 5px 8px 5px 8px;
+    margin: 10px auto 0px auto;
+    border-radius: 8px;
+    white-space: pre-wrap;
 }
