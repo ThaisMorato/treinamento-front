@@ -3,8 +3,6 @@
         -Numéricas; - As unidades precisam ser compatíveis(= e *)
         -Com cores;
         -Com strings.
-
-    modulo tem como operador '%'
 */
 
 h1 {
@@ -29,6 +27,27 @@ p {
     height: (500px/2); // Usa parênteses, divide
     margin-left: 5px + 8px/2px; // Está inserido ema operação aritmética, logo, divide.
     font: (italic bold 10px/8px); // Não divide. Está dentro de uma lista e não está entre parênteses
-    font-size: #{$base-size} / #{$line-height}; //Não divide
+    font-size: #{$base-size} / #{$line-height}; //Não divide. Para dividir precisa tirar as chaves de interpolação
 
-    }
+    } 
+// Podemos fazer operações com cores somando os hexa-decimais. Ou multiplicando
+
+
+//Oprações com rgba precisam ter o mesmo valor de alfa
+p {
+    color: rgba(255,0,0,.75) + rgba(0,255,0,.75);
+} 
+
+//Operações com strings
+p {
+    cursor: e + -resize; //concatena
+}
+
+p:before {
+    content: "Eu tenho #{2 + 10} moedas"; // interpolação comum
+}
+
+$value: null;
+p:before { 
+    content: "Eu tenho #{$value} moedas"; // interpolação comum com um espaço em branco
+}

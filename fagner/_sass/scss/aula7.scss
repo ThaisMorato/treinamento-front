@@ -1,0 +1,16 @@
+/*Mixins
+    Permite definir estilos que podem ser reutilizados em toda a folha de estilo
+
+    funcionam mais ou menos como se fossem uma função ou rotina (não retorna valor)
+*/
+
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+}
+
+.box {
+    @include border-radius(10px)
+} 

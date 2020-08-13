@@ -1,0 +1,11 @@
+@charset "UTF-8";
+/*Mixins
+    Permite definir estilos que podem ser reutilizados em toda a folha de estilo
+
+    funcionam mais ou menos como se fossem uma função ou rotina (não retorna valor)
+*/
+.box {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px; }
