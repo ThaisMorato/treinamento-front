@@ -1,0 +1,34 @@
+/*Operações:
+    Temos 3 tipos de operações:
+        -Numéricas; - As unidades precisam ser compatíveis(= e *)
+        -Com cores;
+        -Com strings.
+
+    modulo tem como operador '%'
+*/
+
+h1 {
+    //font-size: 2em + 22px; // Unidades incompatíveis, não vai compilar
+    font-size: 5px + 2; // 7px ;-)
+    //font-size: 5px * 2px; // As unidades são preservadas, logo ficará px ao quadrado
+}
+
+//subtração
+h2 {
+    font-size: 5px - 2;
+} 
+
+//Divisão
+$base-size: 20px;
+$line-height: 22px;
+p {
+    font: 10px/8px bold italic serif;   // Não divide, mas não entendi ainda o que seria isso
+    $width: 1000px;
+    width: $width/2;    // Neste caso divide
+    width: round(1.5)/2;    // Usa uma função, divide. A função retona um valor nemerico
+    height: (500px/2); // Usa parênteses, divide
+    margin-left: 5px + 8px/2px; // Está inserido ema operação aritmética, logo, divide.
+    font: (italic bold 10px/8px); // Não divide. Está dentro de uma lista e não está entre parênteses
+    font-size: #{$base-size} / #{$line-height}; //Não divide
+
+    }

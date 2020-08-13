@@ -1,0 +1,14 @@
+@charset "UTF-8";
+/*Operações:
+    Temos 3 tipos de operações:
+        -Numéricas; - As unidades precisam ser compatíveis(= e *)
+        -Com cores;
+        -Com strings.
+
+    modulo tem como operador '%'
+*/
+h1 {
+  font-size: 7px; }
+
+h1 {
+  font-size: 3px; }

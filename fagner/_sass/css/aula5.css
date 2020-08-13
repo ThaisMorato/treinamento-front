@@ -1,0 +1,29 @@
+.msg, .msg-erro, .msg-alert {
+  border: 1px solid;
+  padding: 4px;
+  text-align: center; }
+
+.msg-erro {
+  border-color: #ff0000;
+  color: #ff0000; }
+
+.msg-alert {
+  border-color: #ff8e00;
+  color: #ff8e00; }
+
+a:hover, .hoverlink {
+  text-decoration: underline; }
+
+.hoverlink {
+  color: #000; }
+
+.error, .seriousError {
+  border: 1px #f00;
+  background-color: #fdd; }
+
+.attention, .seriousError {
+  font-size: 3em;
+  background-color: #ff0; }
+
+.seriousError {
+  border-width: 3px; }
