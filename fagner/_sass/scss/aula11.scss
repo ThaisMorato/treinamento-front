@@ -1,0 +1,32 @@
+//Diretivas de controle
+
+// iterações
+
+@for $i from 1 through 3 { // Usando through o 3 é considerado, usando to vai até 2 (conjunto aberto)
+    .item-#{$i} {
+        width: 2em * $i;
+    }
+}
+
+
+$animals: dog, cat, fish, bird;
+// animal vai tomar cada um dos valores da lista em cada iteração
+@each $animal in $animals {
+    .#{animal}-icon {
+        background-image: url("images/#{$animal}.png");
+    }
+    
+}
+
+
+//Temos também nosso querido while
+
+$i: 6;
+@while $i > 0 {
+    .item-#{$i} {
+        width: 2em * $i;
+    }
+    $i: $i - 2;
+}   
+
+//Essas são as diretivas de iteração  

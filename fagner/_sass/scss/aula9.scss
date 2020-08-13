@@ -1,0 +1,22 @@
+//placeholders
+
+@mixin center {
+    display: block;
+    margin: 0 auto;    
+}
+
+%center {
+    display: block;
+    margin: 0 auto;
+}
+
+
+// parece uma classe, mas não tem nada a ver----imorta os blocos para os seletores
+div {
+    @extend %center;
+}
+
+// Placeholders são utilizados para blocos estáticos
+// mixins são utilizados para blocos dinamicos
+
+// Quando compila o placeholder agrupa seletores com o mesmo estilo, o mixin não

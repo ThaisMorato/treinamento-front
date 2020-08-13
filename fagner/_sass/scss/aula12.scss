@@ -1,0 +1,8 @@
+//Diretiva media ---- responsividade
+
+.sidebar {
+    width: 40%;
+    @media screen and (landscape) {
+        width: 30%;
+    }
+}

@@ -1,7 +1,7 @@
 /*Mixins
     Permite definir estilos que podem ser reutilizados em toda a folha de estilo
 
-    funcionam mais ou menos como se fossem uma função ou rotina (não retorna valor)
+    funcionam mais ou menos como se fossem uma rotina (não retorna valor!!)
 */
 
 @mixin border-radius($radius) {
@@ -14,3 +14,19 @@
 .box {
     @include border-radius(10px)
 } 
+
+//Podemos usar valores defaut nos mixins
+@mixin titulo ($size, $color: blue) {
+    color: $color;
+    font-size: $size;
+}
+
+h1{
+    @include titulo(14px); // O valor da cor vai ser o azul - defaut
+}
+
+h1 {
+    @include titulo(14px, green)
+}
+
+//Colocando @mixin name ($values...) {} - Posso jogar quantos parametros eu quiser no mixin (a la python)

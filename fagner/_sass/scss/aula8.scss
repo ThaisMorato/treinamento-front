@@ -1,0 +1,45 @@
+// fuctions
+
+$red: 100;
+$green: 200;
+$blue: 100;
+$alfa: .8;
+$color: red;
+$amount: 80%;
+$font: Open Sans;
+$weight: "bold";
+$real_round: 2.2;
+$real: 2.5;
+
+// Temos funções nativas do sass----abaixo
+body {
+    background: rgba($red, $green, $blue, $alfa);
+}
+
+section div {
+    background: lighten($color, $amount); // Vai clarear cor de acordo com a porcentagem
+    background: darken($color, $amount); // vai escurecer a cor de acordo com a porcentagem
+    font-family: quote($font); // recebe sem aspas e adiciona aspas
+    font-weight: unquote($weight); // recebe com aspas e retiras as aspas
+    padding: str-length($weight); //retorna o tamanho da string
+    font-family: to-upper-case($weight); //transform tudo para maiúsculo
+    font-family: to-lower-case($weight); //transforma tudo para minúsculo
+    width: percentage(str-length($weight)); //Podemos usar uma função dentro da  ---- percentage(faz a porcentage, - vezes 100)
+    margin: round($real_round); //arredona um número real
+    margin: ceil($real); //arredonda jogando pra cima
+    margin: floor($real); //arredonda jogando pra baixo
+} 
+ 
+//Mais funções:     sass-lang.com/documetation/Sass/Script/Functions.html
+
+
+
+
+@function calc-fluid($target, $container) {
+
+    @return ($target / $container) * 100%; //Sempre deve haver um return
+}
+
+div {
+    width: calc-fluid(400, 1000);
+}

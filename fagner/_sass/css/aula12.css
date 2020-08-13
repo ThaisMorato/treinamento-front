@@ -1,0 +1,5 @@
+.sidebar {
+  width: 40%; }
+  @media screen and (landscape) {
+    .sidebar {
+      width: 30%; } }
