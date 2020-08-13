@@ -1,0 +1,20 @@
+button {
+  padding: 8px 10px 8px 8px;
+}
+
+div {
+  height: 200px;
+  width: 200px;
+}
+
+@media (min-width: 768px) {
+  div {
+    background-color: blue;
+  }
+}
+
+@media (min-width: 1024px) {
+  div {
+    background-color: red;
+  }
+}
