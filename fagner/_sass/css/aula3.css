@@ -1,0 +1,18 @@
+body {
+  background: red;
+  color: #fff; }
+
+nav {
+  background: #962acd;
+  color: #fff;
+  width: 300;
+  font-size: 14pt; }
+
+aside {
+  width: 300px; }
+
+section {
+  margin: 10px 20px 15px 20px;
+  font-family: "Lucida Grande";
+  font-weight: bold;
+  background: rgba(0, 0, 0, 0.7); }

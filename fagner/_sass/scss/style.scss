@@ -1,0 +1,45 @@
+/*
+body {
+    background: black;
+}
+
+a {
+    color:red;
+}
+
+p {
+    margin: 20px 0;
+}
+*/
+
+//Podemos aninhar seletores no Sass. Mas é preciso ter moderação
+nav {
+    width: auto;
+    background: black;
+
+    ul {
+        list-style: none;
+        padding: 20px 0;
+    }
+
+    li {
+
+        font: {          //Podemos também aninhar propriedades - preciso do ':'
+            family: Arial;
+            size: 14pt;
+            weight: bold;
+        }
+        color: red;
+        margin: 0 20px;
+    }
+
+    a {
+        color: red;
+        &:hover {           //Podemos aninhar pseudo-elements
+            color:blue;
+        }
+    }
+
+
+
+}

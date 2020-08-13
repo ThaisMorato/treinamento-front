@@ -1,0 +1,29 @@
+/*
+body {
+    background: black;
+}
+
+a {
+    color:red;
+}
+
+p {
+    margin: 20px 0;
+}
+*/
+nav {
+  width: auto;
+  background: black; }
+  nav ul {
+    list-style: none;
+    padding: 20px 0; }
+  nav li {
+    font-family: Arial;
+    font-size: 14pt;
+    font-weight: bold;
+    color: red;
+    margin: 0 20px; }
+  nav a {
+    color: red; }
+    nav a:hover {
+      color: blue; }

@@ -1,0 +1,60 @@
+$width: 100%;
+$font-size: 14pt;
+$background: #962acd;
+$color: #fff;
+$boder-style: solid 1px $color;
+
+// variaveis numericas podem ter unidade ou não
+$width-rem: 3.5rem;
+$width-px: 300px;
+$width: 300; //Duas variaveis com o mesmo nome, vai permanecer o ultimo valor
+
+//Variaveis do tipo string. Podem estar ou não entre aspas
+$font: "Lucida Grande";
+$weight: bold;
+
+//Variaveis do tipo cor (obs: rga é convertido para hexa-decimal no css)
+$bg: red;
+$bg-section: rgba(0,0,0, .7);
+$font-color: #fff;
+
+//variaveis do tipo boolean e null
+    //São utilizadas internamente dentro de funções
+$color-dark: true;
+$color-dark: null;
+
+//Variaveis lista
+    //Também não são utilizadas diretamente no css
+$animals: macaco, gato, porco; //lista de strings    |   Aparentemente a virgula é opcional
+$margin: 10px 20px 15px 20px;
+
+//Variaveis maps sempre tem uma chave e um valor (parece um onjeto com seus atributos)
+$social: (
+    facebook: #3b5998,
+    github: #4183c4,
+    youtube: #b00
+);
+
+
+body {
+    background: $bg;
+    color: $font-color;
+}
+
+nav { 
+    background: $background;
+    color:$color;
+    width: $width;
+    font-size: $font-size;
+}
+
+aside {
+    width: $width-px;
+}
+
+section {
+    margin: $margin;
+    font-family: $font;
+    font-weight: $weight;
+    background: $bg-section;
+}
