@@ -8,19 +8,19 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\gabriel\\.nuget\\packages\\": {}
+    "C:\\Users\\Fagner\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\gabriel\\Documents\\GitHub\\treinamento-front\\fagner\\backend\\backend.csproj",
+      "projectUniqueName": "C:\\Users\\Fagner\\Documents\\treinamento-front\\fagner\\backend\\backend.csproj",
       "projectName": "backend",
-      "projectPath": "C:\\Users\\gabriel\\Documents\\GitHub\\treinamento-front\\fagner\\backend\\backend.csproj",
-      "packagesPath": "C:\\Users\\gabriel\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\gabriel\\Documents\\GitHub\\treinamento-front\\fagner\\backend\\obj\\",
+      "projectPath": "C:\\Users\\Fagner\\Documents\\treinamento-front\\fagner\\backend\\backend.csproj",
+      "packagesPath": "C:\\Users\\Fagner\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Fagner\\Documents\\treinamento-front\\fagner\\backend\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\gabriel\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Fagner\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
