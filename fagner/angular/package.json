@@ -20,6 +20,9 @@
     "@angular/platform-browser-dynamic": "~10.0.6",
     "@angular/router": "~10.0.6",
     "animate.css": "^4.1.0",
+    "bootstrap": "^4.5.2",
+    "jquery": "^3.5.1",
+    "popper.js": "^1.16.1",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.1",
     "zone.js": "~0.10.3"
@@ -43,5 +46,9 @@
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
     "typescript": "~3.9.5"
-  }
+  },
+  "description": "This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.5.",
+  "main": "karma.conf.js",
+  "author": "",
+  "license": "ISC"
 }
