@@ -1,66 +1,48 @@
-
-<nav class="navbar navbar-expand-lg navbar-dark bg-gradient-primary">
-  <div class="container">
-    <a class="navbar-brand h1 mb-0" href="a">Vamos Trabalhar:</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSite">
-     <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSite">
-
-      <ul class="navbar-nav mr-auto">
-       <li class="nav-item">
-         <a class="nav-link" href=""><strong>Minhas Tarefas</strong></a>
-        </li>
-
-        <li class="nav-item">
-          <button class="add-button" (click)="changeMode('add')" *ngIf="mode=='list'">
-            <i class="fas fa-plus-circle"></i>
-            NOVA TAREFA
+<app-navbar></app-navbar>
+<div class="corpo">
+  <h1 class="title animate__animated animate__backInDown">{{ title }}</h1>
+    <ul class="mod tabela animate__animated animate__rubberBand" *ngIf="mode=='list'"><br>
+      <p class="text-center" *ngIf="todos.length==0"><small>Não tem nenhuma tarefa hoje!</small></p>
+      <li class=" left list-group-item list-group-item-dark" *ngFor="let fagner of todos">
+        <strong>{{ fagner.todo.toUpperCase() }}</strong> <!-- muito doido isso -->
+        <div class="right">
+          <button *ngIf="!fagner.done" (click)="markAsDone(fagner)" class="btn btn-outline-success">
+            <i class="far fa-check-circle"></i>
           </button>
-        </li>
+          <button *ngIf="fagner.done" (click)="markAsUndone(fagner)" class="btn btn-outline-success">
+            <i class="fas fa-check-circle"></i>
+          </button>&nbsp;
+          <button (click)="remove(fagner)" class="btn btn-outline-danger">
+            <i class="far fa-trash-alt"></i>
+          </button>
+        </div>
 
+      </li>
+    </ul>
 
-      </ul>
-    </div>
+  <div *ngIf="mode=='add'" class=" animate__animated animate__flipInX">
+      <form [formGroup]="form">
+        <div class="form-group mod">
+          <label for="formGroupExampleInput">---------------------------</label>
+          <input type="text" class="form-control" maxlength="60" placeholder="Título da tarefa" formControlName="title">
+          <small class="btn-outline-danger" *ngIf="form.controls.title.invalid && !form.controls.title.pristine">
+            Este campo deve conter entre 3 e 60 caracteres<br>
+          </small>
+        </div>
+        <p class="text-center">
+          <button class="btn btn-primary" [disabled]="form.invalid" (click)="add()">
+          <i class="far fa-save"></i> Salvar</button> 
+        </p>
+      </form>
   </div>
-</nav>
-
-
-<h1 class="title animate__animated animate__backInDown">{{ title }}</h1>
-
-<ul class="for animate__animated animate__rubberBand" *ngIf="mode=='list'">
-
-  <p class="text-center" *ngIf="todos.length==0"><small>Não tem nenhuma tarefa hoje!</small></p>
   
-  <li class="for" *ngFor="let fagner of todos">{{ fagner.todo }} <!-- muito doiso isso-->
-    <button (click)="remove(fagner)"><i class="far fa-trash-alt"></i></button>
-    <button *ngIf="!fagner.done" (click)="markAsDone(fagner)"><i class="far fa-check-circle"></i></button> 
-    <button *ngIf="fagner.done" (click)="markAsUndone(fagner)"><i class="fas fa-check-circle"></i></button> 
-    
-  </li>
-</ul>
+  <button type="button" class="btn btn-dark add-button animate__animated animate__fadeInUp" (click)="changeMode('add')" *ngIf="mode=='list'">
+    <i class="fas fa-plus-circle"></i>
+    NOVA TAREFA
+  </button>
 
-<div id="modal" *ngIf="mode=='add'" class="animate__animated animate__flipInX">
-<h1 class="text-center">Nova Tarefa</h1>
-<form [formGroup]="form">
-    <input type="text" placeholder="Titulo da tarefa" maxlength="60" formControlName="title">
-    <small class="danger" *ngIf="form.controls.title.invalid && !form.controls.title.pristine"> <!--Se ele já tentou preencher e deu erro-->
-      Este campo deve conter entre 3 e 60 caracteres<br>
-    </small>
-    <p class="text-center">
-      <button class="button" [disabled]="form.invalid" (click)="add()">
-        <i class="far fa-save"></i> Salvar</button> 
-    </p>
-</form>
+  <button type="button" class="btn btn-dark add-button animate__animated animate__fadeInUp" (click)="changeMode('list')" *ngIf="mode=='add'">
+    <i class="fas fa-times"></i>
+    CANCELAR
+  </button>
 </div>
-
-<button class="add-button animate__animated animate__fadeInUp button" (click)="changeMode('add')" *ngIf="mode=='list'">
-  <i class="fas fa-plus-circle"></i>
-  NOVA TAREFA
-</button>
-
-<button class="add-button animate__animated animate__fadeInUp button" (click)="changeMode('list')" *ngIf="mode=='add'">
-  <i class="fas fa-times"></i>
-  CANCELAR
-</button>

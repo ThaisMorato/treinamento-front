@@ -13,14 +13,5 @@
     {
       "path": "./tsconfig.spec.json"
     }
-],
-
-"compilerOptions": {
-  "baseUrl": ".",
-  "paths": {
-    "tslib" : ["path/to/node_modules/tslib.d.ts"]
-  }
+]
 }
-
-}
-

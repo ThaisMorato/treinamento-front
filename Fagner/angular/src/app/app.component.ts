@@ -1,6 +1,8 @@
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component } from '@angular/core'; 
 import { Todo } from 'src/models/todo.model';
+import { NavbarComponent } from 'src/app/components/navbar/navbar.component'
+import { from } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +10,7 @@ import { Todo } from 'src/models/todo.model';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  public mode = 'list'
+  public mode:string = 'list'
   public todos: Todo[] = []; //array vazio
   public title: string ='Minhas tarefas'
   public form: FormGroup
@@ -71,13 +73,9 @@ export class AppComponent {
       this.todos = []
     }
   }
-
-  changeMode(mode:string) {
+  changeMode (mode:string) {
     this.mode = mode
   }
-
-
-
 
 }
 
