@@ -12,6 +12,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using backend.Data;
 using Microsoft.EntityFrameworkCore;
+using backend.Models;
 
 namespace backend
 {
@@ -30,6 +31,7 @@ namespace backend
             services.AddDbContext<DataContext>(opt => opt.UseInMemoryDatabase("Database"));
             services.AddScoped<DataContext, DataContext>();
             services.AddControllers();
+            services.AddSingleton<ITarefaRepositorio, TarefaRepositorio>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
