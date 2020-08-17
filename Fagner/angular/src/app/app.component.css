@@ -4,7 +4,7 @@
     height: 100vh;
     align-items: center;
     justify-content: center;
-    font-family:  'Montserrat', sans-serif;
+    font-family:  'Arial', sans-serif;
     font-weight: 300;
     text-align: center;
     background-color: #bbbbbb;
@@ -22,6 +22,12 @@
 
 .right {
     text-align: right;
+}
+
+.nenhuma {
+    text-align: center;
+    margin: auto;
+    color: red;
 }
 
 .title {
