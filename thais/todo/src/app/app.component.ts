@@ -1,3 +1,4 @@
+import { TarefaService } from './tarefa.service';
 import { Component } from '@angular/core';
 import { Todo } from 'src/models/todo.model'
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
@@ -11,9 +12,14 @@ export class AppComponent {
   public title: String = 'Minhas Tarefas';
   public todos: Todo[] = [];
   public form: FormGroup;
-  public mode = 'list';
+  public mode: string = 'list';
 
-  constructor(private fb: FormBuilder) {
+  todo: Todo = {
+    title: '',
+    done: false
+  }
+
+  constructor(private fb: FormBuilder, private tarefaService: TarefaService) {
     this.form = this.fb.group({
       title: ['',Validators.compose([
         Validators.minLength(3),
@@ -21,14 +27,18 @@ export class AppComponent {
         Validators.required
       ])]
     });
-    this.load();
+  }
+
+  ngOnInit(): void{
+    this.tarefaService.buscarTarefas().subscribe(todos => {
+      this.todos = todos;
+    });
   }
 
   add(){
-    const title = this.form.controls.title.value;
-    const id = this.todos.length + 1;
-    this.todos.push(new Todo(id,title,false));
-    this.save();
+    this.todo.title = this.form.controls.title.value;
+    this.tarefaService.adicionarTarefa(this.todo).subscribe(()=>{});
+    this.refresh();
     this.clear();
     this.mode = 'list';
   } 
@@ -37,35 +47,23 @@ export class AppComponent {
     this.form.reset();
   }
 
-  remove(todo: Todo){
-    const index = this.todos.indexOf(todo);
-    if(index !== -1){
-      this.todos.splice(index,1);
-      this.save();
-    }
+  remove(id: number){
+    this.tarefaService.deletarTarefa(id).subscribe(()=>{});
+    this.refresh();
+  }
+  
+
+  mark(todo: Todo){
+    todo.done = !todo.done;
+    console.log("agora ela esta" + todo.done);
+    this.tarefaService.atualizarTarefa(todo).subscribe(()=>{});
+    this.refresh();
   }
 
-  markAsDone(todo: Todo){
-    todo.done = true;
-    this.save();
-  }
-
-  markAsUndone(todo: Todo){
-    todo.done = false;
-    this.save();
-  }
-
-  save(){
-    const data = JSON.stringify(this.todos);
-    localStorage.setItem('todos',data);
-  }
-
-  load(){
-    const data = localStorage.getItem('todos');
-    const myData = JSON.parse(data);
-    if(myData !== null){
-      this.todos = myData;
-    }
+  refresh(){
+    this.tarefaService.buscarTarefas().subscribe(todos => {
+      this.todos = todos;
+    });
   }
 
   changeMode(mode: string){
