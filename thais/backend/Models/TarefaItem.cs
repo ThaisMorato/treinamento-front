@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace backend.Models
 {
-    public class Tarefa
+    public class TarefaItem
     {
         [Key]
         public int Id { get; set; }
