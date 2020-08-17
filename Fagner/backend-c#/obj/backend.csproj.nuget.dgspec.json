@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Fagner\\Documents\\treinamento-front\\fagner\\backend\\backend.csproj": {}
+    "C:\\Users\\Fagner\\Documents\\GitHub\\treinamento-front\\fagner\\backend-c#\\backend.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Fagner\\Documents\\treinamento-front\\fagner\\backend\\backend.csproj": {
+    "C:\\Users\\Fagner\\Documents\\GitHub\\treinamento-front\\fagner\\backend-c#\\backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Fagner\\Documents\\treinamento-front\\fagner\\backend\\backend.csproj",
+        "projectUniqueName": "C:\\Users\\Fagner\\Documents\\GitHub\\treinamento-front\\fagner\\backend-c#\\backend.csproj",
         "projectName": "backend",
-        "projectPath": "C:\\Users\\Fagner\\Documents\\treinamento-front\\fagner\\backend\\backend.csproj",
+        "projectPath": "C:\\Users\\Fagner\\Documents\\GitHub\\treinamento-front\\fagner\\backend-c#\\backend.csproj",
         "packagesPath": "C:\\Users\\Fagner\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Fagner\\Documents\\treinamento-front\\fagner\\backend\\obj\\",
+        "outputPath": "C:\\Users\\Fagner\\Documents\\GitHub\\treinamento-front\\fagner\\backend-c#\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Fagner\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -35,6 +35,12 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.InMemory": {
+              "target": "Package",
+              "version": "[*, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
