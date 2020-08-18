@@ -1,24 +1,14 @@
 {
   "tarefas": [
     {
-      "todo": "aaaaaaa",
-      "done": true,
+      "todo": "Ficar profissa no Angular",
+      "done": false,
       "id": 1
     },
     {
-      "todo": "Fagner",
-      "done": true,
+      "todo": "sic mundus creatos est",
+      "done": false,
       "id": 2
-    },
-    {
-      "todo": "gabriel",
-      "done": true,
-      "id": 3
-    },
-    {
-      "todo": "daseses",
-      "done": true,
-      "id": 4
     }
   ]
 }

@@ -5,6 +5,7 @@ import { from, Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { TODO } from 'src/models/todo.interface'
+import { AppService } from 'src/app/app-service.service'
 
 @Component({
   selector: 'app-root',
@@ -20,12 +21,11 @@ export class AppComponent {
   public Tarefas: TODO[] = []
 
   public mode:string = 'list'
-  public todos: Todo[] = []; //array vazio
+  //public todos: Todo[] = []; //array vazio
   public title: string ='Minhas tarefas'
   public form: FormGroup
-  public baseUrl = "http://localhost:3001/tarefas"
 
-  constructor(private fb: FormBuilder, private http: HttpClient) {
+  constructor(private fb: FormBuilder, private http: HttpClient, private appService:AppService) {
     this.form = this.fb.group({
       title: ['', Validators.compose([
         Validators.minLength(3),
@@ -33,58 +33,39 @@ export class AppComponent {
         Validators.required,
       ])]
     })
-    this.loadRead()   //Dentro do construtor o método vai ser iniciado toda vez que a plicação inicia
+    this.refresh()   //Dentro do construtor o método vai ser iniciado toda vez que a plicação inicia
   }
 
-  create (teste: TODO): Observable<TODO> {
-    return this.http.post<TODO>(this.baseUrl, teste)
-  }
-
-  read (): Observable<TODO[]> {
-    return this.http.get<TODO[]>(this.baseUrl)
+  add() {
+    const title = this.form.controls['title'].value
+    this.tarefa.todo = title
+    this.tarefa.done = false
+    this.appService.create(this.tarefa).subscribe(()=>{this.refresh()})
+    this.form.reset();
+    //this.refresh()
   }
 
   markAsDone(tarefa: TODO) {
     tarefa.done = true
-    return this.http.put<TODO>(`${this.baseUrl}/${tarefa.id}`, tarefa).subscribe()
-    this.loadRead()
+    return this.http.put<TODO>(`${this.appService.baseUrl}/${tarefa.id}`, tarefa).
+    subscribe(()=>{this.refresh()})
+    this.refresh()
   }
 
   markAsUndone(tarefa: TODO){
     tarefa.done = false
-    return this.http.put<TODO>(`${this.baseUrl}/${tarefa.id}`, tarefa).subscribe()
-    this.loadRead()
+    return this.http.put<TODO>(`${this.appService.baseUrl}/${tarefa.id}`, tarefa).
+    subscribe(()=>{this.refresh()})
+    this.refresh()
   }
 
   remove(tarefa:TODO) {
-    this.delete(tarefa).subscribe()
-    this.loadRead()
-  }
-  delete (tarefa:TODO): Observable<TODO>{
-    return this.http.delete<TODO>(`${this.baseUrl}/${tarefa.id}`)
-  }
-  /*
-    const index = this.todos.indexOf(todo);
-    if (index !== -1) {
-      this.todos.splice(index, 1)
-    this.loadRead()
-    }
-  */
-
-
-  add() {
-    const title = this.form.controls['title'].value
-    const id = this.todos.length + 1
-    this.todos.push(new Todo(id, title, false))
-    this.tarefa.todo = title
-    this.tarefa.done = false
-    this.create(this.tarefa).subscribe()
-    this.loadRead()
-    this.form.reset();
+    this.appService.delete(tarefa).subscribe(()=>{this.refresh()})
+    //this.refresh()
   }
 
-  loadRead() {
-    this.read().subscribe(Tarefas => {
+  refresh() {
+    this.appService.read().subscribe(Tarefas => {
       this.Tarefas = Tarefas
     })
     this.mode = 'list'
@@ -95,6 +76,14 @@ export class AppComponent {
   }
 
 }
+
+  /*
+    const index = this.todos.indexOf(todo);
+    if (index !== -1) {
+      this.todos.splice(index, 1)
+    this.loadRead()
+    }
+  */
 
 
   /*
