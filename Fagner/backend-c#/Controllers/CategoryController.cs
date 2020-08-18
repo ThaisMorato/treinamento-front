@@ -1,5 +1,5 @@
-using System.Collections.generic;
-using System.Threading.tasks;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using backend.Data;
@@ -13,23 +13,23 @@ namespace backend.Controllers
     {
 
         [HttpGet]
-        [Rout("")]
-        public async Task<ActionResul<List<Category>>> Get([FromServices] DataContext context)
+        [Route("")]
+        public async Task<ActionResult<List<Category>>> Get([FromServices] DataContext context)
         {
-            var categories = await context.categories.ToListAsync();
+            var categories = await context.Categories.ToListAsync();
             return categories;
         }
 
         [HttpPost]
         [Route("")]
-        public async Task<ActionResul<List<Category>>> Post(
+        public async Task<ActionResult<Category>> Post(
             [FromServices] DataContext context,
             [FromBody] Category model)
         {
             if (ModelState.IsValid)
             {
-                context.categories.Add(model);
-                await context.SaveChangeAsync();
+                context.Categories.Add(model);
+                await context.SaveChangesAsync();
                 return model;
             }
             else

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "M0GOh8lPxEw2vAOrqeV5dWDrHnFTNhBwdNx19PqEb6BXWDV6E4o1hWIHejPL+zscuLDqzPx+oO4pjbUSPhAPvw==",
+  "dgSpecHash": "kMmNOOTSdTxNmAdImGTNrXyD97rQhpoy/n3xs/YmgzvhVO0L51nHmUhj2oVHqbx0FHDFQaKnIXMmh6cMxmtJhg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Fagner\\Documents\\GitHub\\treinamento-front\\fagner\\backend-c#\\backend.csproj",
+  "projectFilePath": "C:\\Users\\Fagner\\Documents\\GitHub\\treinamento-front\\Fagner\\backend-c#\\backend.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Fagner\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\Fagner\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",

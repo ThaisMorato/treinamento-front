@@ -1,5 +1,5 @@
-using Microsoft.EntityFrameworlCore;
-using Shop.Models;
+using Microsoft.EntityFrameworkCore;
+using backend.Models;
 
 namespace backend.Data
 {

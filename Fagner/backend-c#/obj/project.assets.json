@@ -659,7 +659,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
-      "Microsoft.EntityFrameworkCore.InMemory >= *"
+      "Microsoft.EntityFrameworkCore.InMemory >= 3.1.7"
     ]
   },
   "packageFolders": {
@@ -668,11 +668,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Fagner\\Documents\\GitHub\\treinamento-front\\fagner\\backend-c#\\backend.csproj",
+      "projectUniqueName": "C:\\Users\\Fagner\\Documents\\GitHub\\treinamento-front\\Fagner\\backend-c#\\backend.csproj",
       "projectName": "backend",
-      "projectPath": "C:\\Users\\Fagner\\Documents\\GitHub\\treinamento-front\\fagner\\backend-c#\\backend.csproj",
+      "projectPath": "C:\\Users\\Fagner\\Documents\\GitHub\\treinamento-front\\Fagner\\backend-c#\\backend.csproj",
       "packagesPath": "C:\\Users\\Fagner\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Fagner\\Documents\\GitHub\\treinamento-front\\fagner\\backend-c#\\obj\\",
+      "outputPath": "C:\\Users\\Fagner\\Documents\\GitHub\\treinamento-front\\Fagner\\backend-c#\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Fagner\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -699,7 +699,7 @@
         "dependencies": {
           "Microsoft.EntityFrameworkCore.InMemory": {
             "target": "Package",
-            "version": "[*, )"
+            "version": "[3.1.7, )"
           }
         },
         "imports": [

@@ -2,11 +2,11 @@
   "tarefas": [
     {
       "todo": "Ficar profissa no Angular",
-      "done": false,
+      "done": true,
       "id": 1
     },
     {
-      "todo": "sic mundus creatos est",
+      "todo": "Colocar API .Net para funcionar",
       "done": false,
       "id": 2
     }

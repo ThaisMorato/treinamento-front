@@ -5,11 +5,11 @@ namespace backend.Models
 
     public class Category
     {
-        [key]
+        [Key]
 
         public int Id { get; set; }
 
-        [required(ErrorMessage = "Este campo é obrigatorio")]
+        [Required(ErrorMessage = "Este campo é obrigatorio")]
         [MaxLength(60, ErrorMessage = "Deve conter entre 3 e 60 caracteres")]
         [MinLength(3, ErrorMessage = "Deve conter entre 3 e 60 caracteres")]
 
