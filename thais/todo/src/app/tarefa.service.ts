@@ -7,8 +7,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class TarefaService {
-  private baseUrl: string = "http://localhost:3000/tarefas";
-
+  //private baseUrl: string = "http://localhost:3000/tarefas";
+  private baseUrl: string = "https://localhost:5001/api/todoitems";
   constructor(private http: HttpClient) { }
 
   adicionarTarefa(todo: Todo): Observable<Todo> {
