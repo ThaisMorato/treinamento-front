@@ -8,11 +8,9 @@ import { from, Observable } from 'rxjs';
 })
 export class AppService {
 
-  public baseUrl = "http://localhost:3001/tarefas"
+  public baseUrl = "https://192.168.0.102:5001/api/TodoItems"
 
   constructor(private http:HttpClient) { }
-
-
 
   create (teste: TODO): Observable<TODO> {
     return this.http.post<TODO>(this.baseUrl, teste)
@@ -25,7 +23,5 @@ export class AppService {
   delete (tarefa:TODO): Observable<TODO>{
     return this.http.delete<TODO>(`${this.baseUrl}/${tarefa.id}`)
   }
-
-
 
 }
