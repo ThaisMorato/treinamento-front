@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { TODO } from 'src/models/todo.interface';
 import { from, Observable } from 'rxjs';
+import { environment as env } from '../environments/environment'
+import { Local } from '../../src/models/local.model'
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +11,7 @@ import { from, Observable } from 'rxjs';
 export class AppService {
 
   public baseUrl = "http://localhost:3001/tarefas"
+  public baseUrlMap = "http://localhost:3001/locais"
 
   constructor(private http:HttpClient) { }
 
@@ -22,6 +25,10 @@ export class AppService {
 
   delete (tarefa:TODO): Observable<TODO>{
     return this.http.delete<TODO>(`${this.baseUrl}/${tarefa.id}`)
+  }
+
+  getLocais (): Observable<Local[]> {
+    return this.http.get<Local[]>(this.baseUrlMap)
   }
 
 }

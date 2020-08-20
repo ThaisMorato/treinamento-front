@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  MAPA_TILE_LAYER: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
+  //MAPA_TILE_LAYER: 'https://maps.heigit.org/openmapsurfer/tiles/roads/webmercator/{z}/{x}/{y}.png'
 };
 
 /*
