@@ -7,18 +7,8 @@
     },
     {
       "todo": "Fazer curso c#",
-      "done": false,
+      "done": true,
       "id": 3
-    },
-    {
-      "todo": "sic mundus creatus est",
-      "done": false,
-      "id": 4
-    },
-    {
-      "todo": "fazendo um teste",
-      "done": false,
-      "id": 5
     }
   ]
 }

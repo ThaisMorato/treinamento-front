@@ -8,7 +8,7 @@ import { from, Observable } from 'rxjs';
 })
 export class AppService {
 
-  public baseUrl = "https://192.168.0.102:5001/api/TodoItems"
+  public baseUrl = "http://localhost:3001/tarefas"
 
   constructor(private http:HttpClient) { }
 
