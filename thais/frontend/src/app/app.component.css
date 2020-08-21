@@ -1,0 +1,11 @@
+.conteudo{
+    margin: 30px;
+    height: 100%;
+    width: 90%;
+}
+
+.navbar-brand > div {
+    padding: 0px 10px 0px 10px;
+    border: 2px solid white;
+    font-weight: 500;
+}
