@@ -1,0 +1,33 @@
+<h1 class="animate__animated animate__fadeInDown">{{title}}</h1>
+<div class="row justify-content-center">
+  <div *ngIf="mode=='list'" class="col-lg-6 col-md-8 col-sm-12">
+    <ul class="animate__animated animate__flipInX">
+      <li id="nenhumaTarefa" *ngIf="todos.length==0">Você não tem nenhuma tarefa.</li>
+      <li *ngFor="let todo of todos">
+        {{todo.title}}
+        <button class="modeButton" (click)="remove(todo.id)"><i class="far fa-trash-alt"></i></button>
+        <button class="modeButton" *ngIf="!todo.done" (click)="mark(todo)"><i class="far fa-check-circle"></i></button>
+        <button class="modeButton" *ngIf="todo.done" (click)="mark(todo)"><i class="fas fa-check-circle"></i></button>
+      </li>
+    </ul>
+    <div class="row justify-content-center">
+      <button type="button" class="col-auto btn btn-dark animate__animated animate__fadeInUp" (click)="changeMode('add')"><i class="simbol fa fa-plus"></i>ADICIONAR TAREFA</button>
+    </div>
+  </div>
+</div>
+
+<div class="row justify-content-center">
+  <div id="formulario" *ngIf="mode=='add'" class="col-lg-6 col-md-8 col-sm-12">
+    <form [formGroup]="form" class="animate__animated animate__flipInX">
+      <h2>Nova tarefa</h2>
+      <input type="text" formControlName="title" placeholder="Insira a tarefa" maxlength="60">
+      <div *ngIf="form.controls.title.invalid && !form.controls.title.pristine">
+        <small class="danger alert alert-danger" role="alert">Este campo deve conter entre 3 e 60 caracteres</small>
+      </div>
+      <button class="btn btn-dark" [disabled]="form.invalid" (click)="add()">SALVAR</button>
+    </form>
+    <div class="row justify-content-center">
+      <button type="button" class="text-center btn btn-dark animate__animated animate__fadeInUp" (click)="changeMode('list')"><i class="simbol fa fa-times"></i>CANCELAR</button>
+    </div>
+  </div>
+</div>
