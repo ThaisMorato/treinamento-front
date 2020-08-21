@@ -4,6 +4,7 @@ import { TODO } from 'src/models/todo.interface';
 import { from, Observable } from 'rxjs';
 import { environment as env } from '../environments/environment'
 import { Local } from '../../src/models/local.model'
+//import { infoLocal } from '../'
 
 @Injectable({
   providedIn: 'root'
@@ -30,5 +31,9 @@ export class AppService {
   getLocais (): Observable<Local[]> {
     return this.http.get<Local[]>(this.baseUrlMap)
   }
-
+/*
+  getInfoLocal (latlng: string): Observable<InfoLocal> {
+    return this.http.get<InfoLocal>(this.baseUrlMap)
+  }
+*/
 }

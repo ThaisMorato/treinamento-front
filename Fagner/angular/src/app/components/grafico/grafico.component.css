@@ -1,0 +1,7 @@
+#divChart{
+    display: block;
+    width: 800px;
+    height: 800px;
+    margin: auto;
+    position: relative;
+}

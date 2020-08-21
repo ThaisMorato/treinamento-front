@@ -1,3 +1,37 @@
 {
-  "tarefas": []
+  "tarefas": [
+    {
+      "todo": "Fazendo um teste",
+      "done": false,
+      "id": 1
+    },
+    {
+      "todo": "fazendo outro teste",
+      "done": false,
+      "id": 2
+    }
+  ],
+  "locais": [
+    {
+      "name": "Usina de itaipú",
+      "latlng": [-25.409034, -54.594941]
+    },
+    {
+      "name": "Usina de Belo Monte",
+      "latlng": [-3.12777778, -51.77583333]
+    },
+    {
+      "name": "Usina de Três Marias",
+      "latlng": [-18.21333333, -45.26111111]
+    },
+    {
+      "name": "Usina de Tucuruí",
+      "latlng": [-3.83222222, -49.64972222]
+    },
+    {
+      "name": "Usina de Ilha Solteira",
+      "latlng": [-20.381464, -51.365421]
+    }
+    
+  ]
 }
