@@ -9,14 +9,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { HttpClientModule } from '@angular/common/http';
 import { GraficoComponent } from './components/grafico/grafico.component';
-import { ChartsModule } from 'ng2-charts'
+import { ChartsModule } from 'ng2-charts';
+import { LocalComponent } from './components/mapa/local/local.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     TarefasComponent,
     MapaComponent,
-    GraficoComponent
+    GraficoComponent,
+    LocalComponent
   ],
   imports: [
     BrowserModule,

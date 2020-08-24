@@ -3,4 +3,17 @@
     <div class="col-lg-6 col-md-8 col-sm-11">
         <div id="mapa"></div>
     </div>
+    <div class="row justify-content-center">
+        <div class="animate__animated animate__fadeInUp">
+            <button type="button" class="text-center btn btn-secondary" *ngIf="!locais" (click)="adicionarLocais()"><i class="simbol fa fa-plus"></i>Locais</button>
+            <button type="button" class="text-center btn btn-dark" *ngIf="locais" (click)="removerLocais()"><i class="simbol fa fa-minus"></i>Locais</button>
+            <button type="button" class="text-center btn btn-secondary" *ngIf="!areas" (click)="adicionarAreas()"><i class="simbol fa fa-plus"></i>Áreas</button>
+            <button type="button" class="text-center btn btn-dark" *ngIf="areas" (click)="removerAreas()"><i class="simbol fa fa-minus"></i>Áreas</button>
+        </div>
+    </div>
 </div>
+
+<app-local
+    *ngIf="selecionado.nome!=''"
+    [selecionado]="selecionado"
+></app-local>

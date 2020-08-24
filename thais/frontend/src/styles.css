@@ -32,3 +32,12 @@ h2{
 p{
     text-align: center;
 }
+
+.btn{
+    margin: 15px;
+    border-radius: 8px;
+}
+
+.simbol{
+    margin-right: 8px;
+}
