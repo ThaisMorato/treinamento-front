@@ -4,6 +4,7 @@ import { TODO } from 'src/models/todo.interface';
 import { from, Observable } from 'rxjs';
 import { environment as env } from '../environments/environment'
 import { Local } from '../../src/models/local.model'
+import { InfoLocal } from '../../src/models/info-local'
 //import { infoLocal } from '../'
 
 @Injectable({
@@ -13,6 +14,7 @@ export class AppService {
 
   public baseUrl = "http://localhost:3001/tarefas"
   public baseUrlMap = "http://localhost:3001/locais"
+  public baseInfoUrlMap = "http://localhost:3001/infolocais"
 
   constructor(private http:HttpClient) { }
 
@@ -24,16 +26,20 @@ export class AppService {
     return this.http.get<TODO[]>(this.baseUrl)
   }
 
-  delete (tarefa:TODO): Observable<TODO>{
+  delete (tarefa:TODO): Observable<TODO>{ 
     return this.http.delete<TODO>(`${this.baseUrl}/${tarefa.id}`)
   }
 
   getLocais (): Observable<Local[]> {
     return this.http.get<Local[]>(this.baseUrlMap)
   }
-/*
+
   getInfoLocal (latlng: string): Observable<InfoLocal> {
-    return this.http.get<InfoLocal>(this.baseUrlMap)
+    return this.http.get<InfoLocal>(`${this.baseInfoUrlMap}/${latlng}`)
   }
-*/
+
+  getpot (): Observable<InfoLocal[]> {
+    return this.http.get<InfoLocal[]>(this.baseInfoUrlMap)
+  }
+
 }

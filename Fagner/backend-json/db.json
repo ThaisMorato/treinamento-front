@@ -2,36 +2,92 @@
   "tarefas": [
     {
       "todo": "Fazendo um teste",
-      "done": false,
+      "done": true,
       "id": 1
     },
     {
-      "todo": "fazendo outro teste",
-      "done": false,
+      "todo": "gabiroba",
+      "done": true,
       "id": 2
     }
   ],
+
   "locais": [
     {
       "name": "Usina de itaipú",
-      "latlng": [-25.409034, -54.594941]
+      "latlng": [
+        -25.409034,
+        -54.594941
+      ]
     },
+    
     {
       "name": "Usina de Belo Monte",
-      "latlng": [-3.12777778, -51.77583333]
+      "latlng": [
+        -3.12777778,
+        -51.77583333
+      ]
     },
+
     {
       "name": "Usina de Três Marias",
-      "latlng": [-18.21333333, -45.26111111]
+      "latlng": [
+        -18.21333333,
+        -45.26111111
+      ]
     },
+
     {
       "name": "Usina de Tucuruí",
-      "latlng": [-3.83222222, -49.64972222]
+      "latlng": [
+        -3.83222222,
+        -49.64972222
+      ]
+
     },
     {
       "name": "Usina de Ilha Solteira",
-      "latlng": [-20.381464, -51.365421]
+      "latlng": [
+        -20.381464,
+        -51.365421
+      ]
     }
-    
+  ],
+
+  "infolocais": [
+    {
+      "name": "Usina de itaipú",
+      "id": "-25.409034,-54.594941",
+      "latlng": "-25.409034,-54.594941",
+      "pot": 14000
+    },
+
+    {
+      "name": "Usina de Belo Monte",
+      "id": "-3.12777778,-51.77583333",
+      "latlng": "-3.12777778,-51.77583333",
+      "pot": 11233
+    },
+
+    {
+      "name": "Usina de Três Marias",
+      "id": "-18.21333333,-45.26111111",
+      "latlng": "-18.21333333,-45.26111111",
+      "pot": 396
+    },
+
+    {
+      "name": "Usina de Tucuruí",
+      "id": "-3.83222222,-49.64972222",
+      "latlng": "-3.83222222,-49.64972222",
+      "pot": 8370
+    },
+
+    {
+      "name": "Usina de Ilha Solteira",
+      "id": "-20.381464,-51.365421",
+      "latlng": "-20.381464,-51.365421",
+      "pot": 3444
+    }
   ]
 }

@@ -1,0 +1,14 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+.botao-voltar {
+    position: fixed;
+    top:65px;
+    right: 30px;
+    z-index: 102;
+}
+
+.botao-voltar button {
+    margin: 10px;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+}
