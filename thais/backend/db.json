@@ -1,19 +1,90 @@
 {
   "tarefas": [
     {
-      "title": "Passear com o Chico",
-      "done": true,
+      "title": "Relatório de Conversão",
+      "done": false,
       "id": 1
     },
     {
-      "title": "Ligar para as avós",
+      "title": "Lista de ProcSin",
       "done": true,
       "id": 2
     },
     {
-      "title": "Enviar trabalho do laboratório",
-      "done": false,
+      "title": "Relatório de Eletrônica II",
+      "done": true,
       "id": 3
+    },
+    {
+      "title": "Segunda prática de TeCom",
+      "done": false,
+      "id": 4
+    },
+    {
+      "title": "Trabalho de Filosofia",
+      "done": false,
+      "id": 5
+    }
+  ],
+  "locais": [
+    {
+      "lat": -19.937655,
+      "lng": -43.937724,
+      "nome": "CONCERT Technologies",
+      "descricao": "Empresa de base tecnológica que atua há 16 anos no mercado de Tecnologia da Operação (TO) de Tempo Real e de Sistemas Críticos nas Áreas de Utilities, Aeroespacial e Defesa."
+    },
+    {
+      "lat": -19.937225,
+      "lng": -43.936742,
+      "nome": "A Autêntica",
+      "descricao": "Casa noturna animada com cervejas, aperitivos e música independente ao vivo."
+    },
+    {
+      "lat": -19.939958,
+      "lng": -43.937498,
+      "nome": "Duke 'N' Duke",
+      "descricao": "Bar irlandês com chope Guinness, hambúrguer gourmet, decoração tradicional, iluminação indireta e jazz."
+    },
+    {
+      "lat": -19.934713,
+      "lng": -43.943038,
+      "nome": "Arezzo",
+      "descricao": "A maior marca de varejo de calçados femininos fashion da América Latina, reunindo conceito, alta qualidade e design contemporâneo."
+    },
+    {
+      "lat": -19.936598,
+      "lng": -43.929648,
+      "nome": "Carrefour",
+      "descricao": "Carrefour é uma rede internacional de hipermercados."
+    },
+    {
+      "lat": -19.937336,
+      "lng": -43.947278,
+      "nome": "Museu Histórico Abílio Barreto",
+      "descricao": "Neste museu está o acervo histórico relativo a Belo Horizonte. Ele torna público o acesso aos bens culturais preservados."
+    }
+  ],
+  "areas": [
+    {
+      "lat": -19.941,
+      "lng": -43.9341,
+      "radius": 100,
+      "nome": "Shopping Pátio Savassi",
+      "descricao": "Centro de compras de vanguarda, sofisticado e fashion, aonde as tendências da moda chegam primeiro."
+    },
+    {
+      "lat": -19.935525,
+      "lng": -43.941065,
+      "radius": 150,
+      "nome": "Minas Tênis Clube I",
+      "descricao": "Primeira unidade do Minas Tênis Clube, uma agremiação desportiva e social."
+    },
+    {
+      "lat": -19.937762,
+      "lng": -43.928177,
+      "radius": 60,
+      "nome": "Primeiro Batalhão de Bombeiros Militar",
+      "descricao": "Comandandado pelo Tenente-Coronel BM Winderson Alain Moura."
     }
   ]
 }

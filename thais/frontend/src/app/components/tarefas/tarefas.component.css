@@ -35,15 +35,6 @@ li{
     transition: opacity 1s;
 }
 
-.btn{
-    margin-top: 15px;
-    border-radius: 8px;
-}
-
-.simbol{
-    margin-right: 8px;
-}
-
 #formulario>form{
     text-align: center;
     margin: 10px;
